@@ -6,12 +6,12 @@
 
 const char* ssid = "ICan";
 const char* password = "ican2022";
-const char* serverUrl = "http://192.168.100.53:5000/api/rssi"; // Change to your server
+const char* serverUrl = "http://192.168.100.53:5000/api/rssi"; 
 
 int scanTime = 5; // seconds
 BLEScan* pBLEScan;
 
-void sendRSSI(String mac, int rssi); // Declare it here
+void sendRSSI(String mac, int rssi); 
 
 
 class MyAdvertisedDeviceCallbacks: public BLEAdvertisedDeviceCallbacks {
@@ -26,7 +26,7 @@ class MyAdvertisedDeviceCallbacks: public BLEAdvertisedDeviceCallbacks {
       Serial.println("MAC: " + mac);
       Serial.println("RSSI: " + String(rssi));
 
-      sendRSSI(mac, rssi); // Send to your server
+      sendRSSI(mac, rssi); 
     }
   }
 };
