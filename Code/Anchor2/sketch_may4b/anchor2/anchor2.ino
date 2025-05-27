@@ -5,17 +5,13 @@
 #include <BLEAdvertisedDevice.h>
 #include <time.h>
 
-// const char* ssid = "HUAWEI-U8um";
-// const char* password = "TGJQV4ev";
-const char* ssid = "ICan";
-const char* password = "ican2022";
-//const char* serverUrl = "http://192.168.100.45:5000/api/rssi"; 
-const char* serverUrl = "http://192.168.100.53:5000/api/rssi"; 
+const char* ssid = "Wifi name";
+const char* password = "Wifi password";
+const char* serverUrl = "http://<device-ip-address>:5000/api/rssi"; 
 
 String anchorID = "Anchor2"; 
 String targetDeviceName = "SmartPhone"; 
 
-//int scanTime = 3;
 unsigned long lastScanTime = 0;
 BLEScan* pBLEScan;
 
@@ -63,12 +59,8 @@ void setup() {
 }
 
 void loop() {
-  // time_t now = time(nullptr);
-  // struct tm* timeinfo = localtime(&now);
-
-  // Synchronize scan every 5 seconds (0, 5, 10, ...)
- // if (timeinfo->tm_sec % scanTime == 0) {
-  if (millis() - lastScanTime >= 500) {
+  
+  if (millis() - lastScanTime >= 100) {
     Serial.println("[" + anchorID + "] Starting synchronized scan!");
 
     BLEScanResults results = *pBLEScan->start(1, false);
@@ -87,7 +79,6 @@ void loop() {
         Serial.println("Name: " + String(d.getName().c_str()));
         Serial.println("MAC: " + mac);
         Serial.println("RSSI: " + String(rssi));
-        // Serial.println("Time: " + String(timeinfo->tm_sec));
         sendRSSI(mac, rssi);
         found = true;
         break;
@@ -99,10 +90,9 @@ void loop() {
     }
 
     pBLEScan->clearResults();
-    //delay(1200); // avoid multiple scans in the same second
+    
   }
 
-  //delay(200); // check again soon
 }
 
 
