@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dPuXOktheCI=",
+  "dgSpecHash": "767s5wwzLyE=",
   "success": true,
-  "projectFilePath": "C:\\Users\\edign\\IndoorLocalizationDashboard\\IndoorLocalizationSystem\\IndoorLocalizationSystem\\IndoorLocalizationSystem.csproj",
+  "projectFilePath": "C:\\Users\\edign\\Capstone-Project\\RealTimeDashboard\\IndoorLocalizationSystem\\IndoorLocalizationSystem.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\edign\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\edign\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\9.0.5\\microsoft.aspnetcore.cryptography.internal.9.0.5.nupkg.sha512",

@@ -3199,11 +3199,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\edign\\IndoorLocalizationDashboard\\IndoorLocalizationSystem\\IndoorLocalizationSystem\\IndoorLocalizationSystem.csproj",
+      "projectUniqueName": "C:\\Users\\edign\\Capstone-Project\\RealTimeDashboard\\IndoorLocalizationSystem\\IndoorLocalizationSystem.csproj",
       "projectName": "IndoorLocalizationSystem",
-      "projectPath": "C:\\Users\\edign\\IndoorLocalizationDashboard\\IndoorLocalizationSystem\\IndoorLocalizationSystem\\IndoorLocalizationSystem.csproj",
+      "projectPath": "C:\\Users\\edign\\Capstone-Project\\RealTimeDashboard\\IndoorLocalizationSystem\\IndoorLocalizationSystem.csproj",
       "packagesPath": "C:\\Users\\edign\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\edign\\IndoorLocalizationDashboard\\IndoorLocalizationSystem\\IndoorLocalizationSystem\\obj\\",
+      "outputPath": "C:\\Users\\edign\\Capstone-Project\\RealTimeDashboard\\IndoorLocalizationSystem\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
