@@ -6,12 +6,12 @@
 #include <time.h>
 
 
-const char* ssid = "Wifi name";
-const char* password = "Wifi password";
-const char* serverUrl = "http://<device-ip-address>:5000/api/rssi"; 
+const char* ssid = "ICan";
+const char* password = "ican2022";
+const char* serverUrl = "http://192.168.100.50:5000/api/rssi"; 
 
 String anchorID = "Anchor3"; 
-String targetDeviceName = "SmartPhone"; 
+String targetDeviceName = "Edi Sulo"; 
 
 unsigned long lastScanTime = 0;
 BLEScan* pBLEScan;
@@ -31,7 +31,7 @@ void sendRSSI(String mac, int rssi) {
     HTTPClient http;
     http.begin(serverUrl);
     http.addHeader("Content-Type", "application/json");
-    String payload = "{\"anchor_id\": \"" + anchorID + "\", \"mac\": \"" + mac + "\", \"rssi\": " + String(rssi) + "}";
+    String payload = "{\"anchor_id\": \"" + anchorID + "\", \"device_name\": \"" + targetDeviceName + "\", \"mac\": \"" + mac + "\", \"rssi\": " + String(rssi) + "}";
     int response = http.POST(payload);
     Serial.print("POST response: ");
     Serial.println(response);
