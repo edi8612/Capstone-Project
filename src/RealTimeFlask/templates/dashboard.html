@@ -1,0 +1,145 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container my-4">
+  <!-- Page Header -->
+  <div class="row mb-3 align-items-center">
+    <div class="col">
+      <h1 class="display-5">
+        <i class="bi bi-calendar2-check-fill"></i>
+        Attendance Dashboard
+      </h1>
+      <p class="text-muted">Real‐time view of who’s in class, last seen, and position.</p>
+    </div>
+  </div>
+
+    <!-- Row 1: Currently Present, Attended, & Last Known Positions -->
+  <div class="row">
+    <!-- 1a) Currently Present -->
+    <div class="col-lg-4 mb-4">
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+          <i class="bi bi-people-fill"></i> Currently Present
+        </div>
+        <ul id="present-students" class="list-group list-group-flush">
+          <!-- Populated by JavaScript -->
+          <li class="list-group-item list-group-item-danger">
+            No students currently present
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 1b) Attended (last‐seen ≥ 5 min ago) -->
+    <div class="col-lg-4 mb-4">
+      <div class="card">
+        <div class="card-header bg-secondary text-white">
+          <i class="bi bi-person-check-fill"></i> Attended
+        </div>
+        <ul id="attended-students" class="list-group list-group-flush">
+          <!-- Populated by JavaScript -->
+          <li class="list-group-item list-group-item-warning">
+            No one has attended yet
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 1c) Last Known Positions -->
+    <div class="col-lg-4 mb-4">
+      <div class="card">
+        <div class="card-header bg-info text-white">
+          <i class="bi bi-compass-fill"></i> Last Known Positions
+        </div>
+        <div class="card-body p-0">
+          <table class="table table-striped mb-0">
+            <thead class="table-light">
+              <tr>
+                <th scope="col">Student</th>
+                <th scope="col">X (m)</th>
+                <th scope="col">Y (m)</th>
+              </tr>
+            </thead>
+            <tbody id="position-table">
+              <!-- Populated by JavaScript -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Row 2: RSSI History per Anchor -->
+  <div class="row section-spacer">
+    <!-- Anchor1 RSSI -->
+    <div class="col-lg-4 mb-4">
+      <div class="card">
+        <div class="card-header bg-info text-white">
+          <i class="bi bi-wifi"></i> Anchor1 RSSI (Last 10)
+        </div>
+        <ul id="rssi-anchor1" class="list-group list-group-flush">
+          <!-- Populated by JavaScript -->
+        </ul>
+      </div>
+    </div>
+    <!-- Anchor2 RSSI -->
+    <div class="col-lg-4 mb-4">
+      <div class="card">
+        <div class="card-header bg-info text-white">
+          <i class="bi bi-wifi"></i> Anchor2 RSSI (Last 10)
+        </div>
+        <ul id="rssi-anchor2" class="list-group list-group-flush">
+          <!-- Populated by JavaScript -->
+        </ul>
+      </div>
+    </div>
+    <!-- Anchor3 RSSI -->
+    <div class="col-lg-4 mb-4">
+      <div class="card">
+        <div class="card-header bg-info text-white">
+          <i class="bi bi-wifi"></i> Anchor3 RSSI (Last 10)
+        </div>
+        <ul id="rssi-anchor3" class="list-group list-group-flush">
+          <!-- Populated by JavaScript -->
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Row 3: Latest Distances -->
+  <div class="row section-spacer">
+    <div class="col-12 mb-4">
+      <div class="card">
+        <div class="card-header bg-dark text-white">
+          <i class="bi bi-arrows-angle-expand"></i> Latest Distances (m)
+        </div>
+        <ul id="distances-list" class="list-group list-group-flush">
+          <!-- Populated by JavaScript -->
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Row 4: 2D Scatter‐Plot “Map” -->
+  <div class="row section-spacer">
+    <div class="col-12 mb-4">
+      <div class="card">
+        <div class="card-header bg-success text-white">
+          <i class="bi bi-map-fill"></i> Classroom Map
+        </div>
+        <div class="card-body p-4">
+          <canvas id="positionChart" width="400" height="400"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- jQuery (for AJAX) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Chart.js CDN (for the scatter plot map) -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script>
+<!-- Your custom JS -->
+<script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+{% endblock %}
