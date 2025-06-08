@@ -1,8 +1,11 @@
 from flask import Flask, request, jsonify, render_template # type: ignore
 from datetime import datetime
 from rssi_processing import KalmanFilter, weighted_trilateration, anchor_positions, rssi_to_distance
+# from flask_socketio import SocketIO, emit
 
 app = Flask(__name__)
+# Ajax -> socketio
+# socketio = SocketIO(app,cors_allowed_origins="*")
 
 data_log = {
     "Anchor1": [],
@@ -154,6 +157,6 @@ def dashboard():
     return render_template('dashboard.html',
                            present_students=present_students,
                            attendance_log=attendance_log)
-
+# app.run -> socketio.run
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
