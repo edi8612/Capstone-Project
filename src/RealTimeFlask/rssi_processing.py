@@ -17,8 +17,8 @@ class KalmanFilter:
 # My Room:   A1(0,0), A2(2.94,0), A3(1.47,3.31)
 anchor_positions = {
     "Anchor1": (0, 0),
-    "Anchor2": (3, 0),
-    "Anchor3": (1.059, 3.545)
+    "Anchor2": (3.285, 0),
+    "Anchor3": (1.655, 4.45)
 }
 
 def rssi_to_distance(rssi, tx_power=-59, n=2.5):

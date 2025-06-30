@@ -118,8 +118,8 @@ def get_attendance():
                 "y": y
             }
 
-        recent_rssi = {}
-        for anchor, values in data_log.items():
+    recent_rssi = {}
+    for anchor, values in data_log.items():
             last10 = values[-10:]  # takes at most the last 10 entries
             recent_rssi[anchor] = [
             {
@@ -130,8 +130,8 @@ def get_attendance():
             for (t, raw, filt) in last10
         ]
 
-        latest_distances = {}
-        for anchor, values in data_log.items():
+    latest_distances = {}
+    for anchor, values in data_log.items():
             if values:
                 last_filtered = values[-1][2]
                 latest_distances[anchor] = round(rssi_to_distance(last_filtered), 2)

@@ -1,7 +1,7 @@
 const ANCHOR_POSITIONS = [
   { x: 0.0,   y: 0.0 },   // Anchor1
-  { x: 3.0,   y: 0.0 },   // Anchor2
-  { x: 1.059, y: 3.545 }  // Anchor3
+  { x: 3.285,   y: 0.0 },   // Anchor2
+  { x: 1.655, y: 4.45 }  // Anchor3
 ];
 
 let positionChart, rssiChart1, rssiChart2, rssiChart3;
@@ -113,7 +113,9 @@ function fetchAttendance() {
           const friendly = macToName[mac] || mac;
           attendedList.append(`
             <li class="list-group-item d-flex justify-content-between align-items-center">
-              <div><i class="bi bi-person-check-fill"></i> ${friendly} <small class="text-muted">(${mac})</small><br/><small class="text-muted">Last seen: ${info.last_seen}</small></div>
+              <div><i class="bi bi-person-check-fill"></i> ${friendly} <small class="text-muted">
+              (${mac})</small><br/><small class="text-muted">Last seen: ${info.last_seen}</small>
+              </div>
               <span class="badge bg-secondary rounded-pill">Attended</span>
             </li>
           `);
