@@ -1,7 +1,3 @@
-Thanks for the clarification! Here's a revised version of the README for your Capstone Project, excluding Raspberry Pi references:
-
----
-
 # 🚀 Capstone Project
 
 **Title:** Indoor Localization and Orientation Estimation Using ESP32 and Kalman Filtering
