@@ -1,6 +1,6 @@
-# 📡 Indoor Localization System for Automated Classroom Attendance
+# Indoor Localization System for Automated Classroom Attendance
 
-## 📖 Overview
+## Overview
 
 This project implements a **Real-Time Indoor Localization System (ILS)** designed to automate classroom attendance tracking. The system estimates the position of students inside a classroom using **Bluetooth Low Energy (BLE)** signals from ESP32 anchors and RSSI measurements.
 
@@ -10,7 +10,7 @@ This project was developed as a **Capstone Project** focused on combining **IoT,
 
 ---
 
-# 🎯 Objectives
+# Objectives
 
 The main objectives of this project are:
 
@@ -22,7 +22,7 @@ The main objectives of this project are:
 
 ---
 
-# 🏗 System Architecture
+# System Architecture
 
 The system consists of the following components:
 
@@ -55,7 +55,7 @@ The system consists of the following components:
 
 ---
 
-# ⚙️ Technologies Used
+# Technologies Used
 
 ## Hardware
 
@@ -84,39 +84,39 @@ The system consists of the following components:
 
 ---
 
-# 📊 Key Features
+# Key Features
 
-✅ Real-time RSSI collection from multiple anchors
-✅ Noise reduction using Kalman filtering
-✅ Distance estimation from signal strength
-✅ Indoor positioning using trilateration
-✅ Student position visualization
-✅ Automated attendance tracking
-✅ Dashboard monitoring system
+* Real-time RSSI collection from multiple anchors
+* Noise reduction using Kalman filtering
+* Distance estimation from signal strength
+* Indoor positioning using trilateration
+* Student position visualization
+* Automated attendance tracking
+* Dashboard monitoring system
 
 ---
 
-# 📐 Localization Method
+# Localization Method
 
-### 1️⃣ RSSI Collection
+### 1️RSSI Collection
 
 Each ESP32 anchor measures the **Received Signal Strength Indicator (RSSI)** from nearby BLE devices.
 
-### 2️⃣ Filtering
+### 2️Filtering
 
 RSSI values are noisy, so a **Kalman Filter** is applied to smooth measurements.
 
-### 3️⃣ Distance Estimation
+### 3️Distance Estimation
 
 RSSI values are converted to approximate distances using a path loss model.
 
-### 4️⃣ Trilateration
+### 4️Trilateration
 
 Using the distances from **three anchors**, the system calculates the device position.
 
 ---
 
-# 📷 Example Output
+# Example Output
 
 The system visualizes:
 
@@ -127,9 +127,9 @@ The system visualizes:
 
 ---
 
-# 🚀 Installation
+# Installation
 
-### 1️⃣ Clone the repository
+### 1️Clone the repository
 
 ```bash
 git clone https://github.com/edi8612/Capstone-Project.git
@@ -138,7 +138,7 @@ cd Capstone-Project
 
 ---
 
-### 2️⃣ Install dependencies
+### 2️Install dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -146,7 +146,7 @@ pip install -r requirements.txt
 
 ---
 
-### 3️⃣ Run the Flask server
+### 3️Run the Flask server
 
 ```bash
 python app.py
@@ -154,7 +154,7 @@ python app.py
 
 ---
 
-### 4️⃣ Connect ESP32 Anchors
+### 4️Connect ESP32 Anchors
 
 Configure the ESP32 devices to:
 
@@ -163,7 +163,7 @@ Configure the ESP32 devices to:
 
 ---
 
-# 📁 Project Structure
+# Project Structure
 
 ```
 Capstone-Project
@@ -187,7 +187,7 @@ Capstone-Project
 
 ---
 
-# 🧪 Future Improvements
+# Future Improvements
 
 * Add **machine learning for RSSI calibration**
 * Improve positioning accuracy
@@ -197,7 +197,7 @@ Capstone-Project
 
 ---
 
-# 👨‍💻 Author
+# Author
 
 **Edi Sulo**
 
@@ -209,7 +209,7 @@ GitHub:
 
 ---
 
-# 📜 License
+# License
 
 This project is licensed under the MIT License.
 
