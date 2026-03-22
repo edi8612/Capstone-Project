@@ -5,9 +5,9 @@
 #include <BLEAdvertisedDevice.h>
 #include <time.h>
 
-const char* ssid = "DSG_Lab";
-const char* password = "mvdsi304";
-const char* serverUrl = "http://192.168.1.105:5000/api/rssi"; 
+const char* ssid = "Wifi Name";
+const char* password = "Wifi Password";
+const char* serverUrl = "http://[IP Address:Port] /api/rssi"; 
 
 String anchorID = "Anchor2"; 
 String targetDeviceName = "Edi Sulo"; 
