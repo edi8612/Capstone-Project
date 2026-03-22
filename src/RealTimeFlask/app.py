@@ -1,11 +1,8 @@
 from flask import Flask, request, jsonify, render_template # type: ignore
 from datetime import datetime
 from rssi_processing import KalmanFilter, weighted_trilateration, anchor_positions, rssi_to_distance
-# from flask_socketio import SocketIO, emit
 
 app = Flask(__name__)
-# Ajax -> socketio
-# socketio = SocketIO(app,cors_allowed_origins="*")
 
 data_log = {
     "Anchor1": [],
@@ -39,13 +36,13 @@ def receive_rssi():
         mac_to_name[mac] = device_name
 
     if anchor is None or mac is None or raw_rssi is None:
-        print("❌ Missing one of anchor_id / mac / rssi in payload!")
+        print(" Missing one of anchor_id / mac / rssi in payload!")
         return jsonify({"error": "Missing anchor_id or mac or rssi"}), 400
 
     print(f"Anchor: {anchor}, MAC: {mac}, Raw RSSI: {raw_rssi}")
 
     if anchor not in data_log:
-        print(f"❌ Unknown anchor ID: {anchor}")
+        print(f" Unknown anchor ID: {anchor}")
         return jsonify({"error": "Unknown anchor"}), 400
 
     # Apply Kalman filter
@@ -77,11 +74,11 @@ def receive_rssi():
         attendance_log.setdefault(mac, []).append(timestamp)
         attendance_log[mac] = attendance_log[mac][-5:]
 
-        print(f"✅ Logged attendance for MAC {mac} (within {THRESHOLD} m of an anchor)")
+        print(f" Logged attendance for MAC {mac} (within {THRESHOLD} m of an anchor)")
     else:
        if mac in attendance_log:
             attendance_log.pop(mac)
-            print(f"⚠️ {mac} removed from attendance_log (out of range)")
+            print(f" {mac} removed from attendance_log (out of range)")
 
     return jsonify({"status": "received"}), 200
 
