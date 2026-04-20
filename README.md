@@ -52,6 +52,8 @@ The system consists of the following components:
    * Displays classroom layout
    * Plots student positions
    * Shows attendance data
+     
+<img width="683" height="962" alt="Architecture" src="https://github.com/user-attachments/assets/b3ec85ae-4ef7-4c53-91e5-7fd5b58719ac" />
 
 ---
 
